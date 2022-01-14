@@ -1,8 +1,6 @@
 import Leson_cucumber_tho.MarkBeforeClickListener;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Test;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +9,9 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +25,7 @@ public class TestSite {
         public static EventFiringWebDriver driver;
         protected WebDriverWait wait;
 
-        @Before
+        @BeforeTest
         public void setUp(ITestContext context) {
             driver = new EventFiringWebDriver(setupDriver("CHROME"));
             driver.register(new MarkBeforeClickListener());
@@ -36,7 +37,7 @@ public class TestSite {
 
         }
 
-        @After
+        @AfterTest
         public void teamDown() {
             driver.quit();// Закрытие браузера
         }
