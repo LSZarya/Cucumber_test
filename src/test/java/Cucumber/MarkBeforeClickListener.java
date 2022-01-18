@@ -1,4 +1,4 @@
-package Leson_cucumber_tho;
+package Cucumber;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverEventListener;
@@ -9,7 +9,7 @@ public class MarkBeforeClickListener implements WebDriverEventListener {
     public void beforeClickOn(WebElement element, WebDriver driver) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", element);
         try {
-            Thread.sleep(1_000);
+            Thread.sleep(3_000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -26,20 +26,10 @@ public class MarkBeforeClickListener implements WebDriverEventListener {
     }
 
     @Override
-    public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-
-    }
-
-    @Override
-    public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-
-    }
-
-    @Override
     public void beforeGetText(WebElement element, WebDriver driver) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", element);
         try {
-            Thread.sleep(500);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -53,6 +43,16 @@ public class MarkBeforeClickListener implements WebDriverEventListener {
         }catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+
+    }
+
+    @Override
+    public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+
     }
 
     @Override
