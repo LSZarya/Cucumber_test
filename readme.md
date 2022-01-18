@@ -1,11 +1,13 @@
 # Запуск тестов _Otus_ дз. №2 Cucumber
 
 ### Запуск тестов происходит и файла RunCucumberTest, 
-### расположен файл в src/java/Cucumber/RunCucumberTest
+
+#### расположен файл в src/java/Cucumber/RunCucumberTest
 
 ___
 ### Сценарии находятся в папке features
-###расположен файл в src/java/resources/features
+
+#### расположен файл в src/java/resources/features
 ___
 
 В сценариях вы сначала выбираете браузер(CHROME/FIREFOX/OPERA), и потом требуемые действия, то делает сценарий понятно из его названия.
